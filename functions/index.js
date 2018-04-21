@@ -33,7 +33,7 @@ exports.addresses = functions.https.onRequest((req, res) => {
           }
         })
 
-        if (row.hasOwnProperty('club')) {
+        if (row.hasOwnProperty('club') && row.club !== 'BYE - VRIJ') {
           addresses.push(row)
         }
       })

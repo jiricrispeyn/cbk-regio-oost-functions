@@ -38,7 +38,10 @@ exports.addresses = functions.https.onRequest((req, res) => {
         }
       })
 
-      return res.status(200).send(addresses)
+      return res.status(200).send({
+        division: req.body.division,
+        addresses: addresses
+      })
     },
     error => res.status(500).send('Internal Server Error')
   ).catch(
